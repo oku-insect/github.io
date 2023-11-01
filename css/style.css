@@ -1,0 +1,888 @@
+@charset "UTF-8";
+
+*{
+    margin: 0 ;
+    padding: 0;
+    line-height: 1;
+    box-sizing: border-box;
+    /* 幅を指定した要素（タグ）にborder、paddingを設定した際に要素が広がってしまうことを防ぐため */
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    /*   ここまでフォントファミリー  各OSに適したフォントを用意しておく*/
+    color: #444;
+    /* サイト全体の文字色を定義しておく */
+}
+
+ul {
+    list-style: none;
+    /*   liの装飾を削除する  */
+}
+
+a {
+    text-decoration: none;
+    /*   aタグの初期設定。aタグはでデフォルトで持っている下線を消しておく */
+}
+
+img{
+    max-width: 100%;
+    /* 親要素の大きさ以上大きくならず、かつ、自身の原寸大以上に大きくならない */
+    height: auto;
+    /* タグのほうでの高さ指定を調整 今のところ、あってもなくても-- Wordpressでは使うかも */
+    vertical-align: bottom;
+    /* imgは、文字と同等扱いなので、必ず下部に余白（デセンダー）が出来てしまうのを防ぐ。他の防ぐ方法としてインライン要素をブロック要素に変える方法もあり */
+}
+
+video{
+    width: 100%;
+    height: 100%;
+}
+
+/*-----------------------------------------
+    pc max-setting   
+-----------------------------------------*/
+
+.container {
+    max-width: 1024px;
+    /* 最大値、1024px それ以下可変　max-width使用 */
+    margin: 0 auto;
+    /* ブロック要素の中央揃い　m0ｰa */
+}
+
+/*PCの情報コンテンツの最大幅の設定 ------ 各パーツでこのCSSを再利用、または流用（マルチクラス）　*/
+
+
+/*-----------------------------------------
+    html - smooth scroll setting   
+-----------------------------------------*/
+    /* SPの表示の際、通常のページ内リンクを使用 */
+
+html {
+    scroll-behavior: smooth;
+    /* PC表示の際、 cssの、scroll-behavior: smoothを設定 */
+}
+
+
+
+/*-----------------------------------------
+    header - setting   
+-----------------------------------------*/
+
+header{
+    position: relative;
+    /* .logoの親要素設定 */
+}
+/* 現在表示されているブラウザの高さ100％から、60ピクセル(現時点でのnavの高さ)引いた高さを表示 */
+header .logo{
+    position: absolute;
+    left: 30px;
+    bottom: 100px;
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 1;
+
+}
+
+header .logo h1{
+text-align: center;
+/* テキスト中央揃い */
+font-size: 26px;
+/* フォントサイズ20px以上で適当 */
+padding: 50px 0 60px;
+/* 上下のpadding適当 */
+background-color: rgba(255, 255, 255, 0.7);
+/* 背景色、#fffの透明度、0.7程度 */
+font-family: 'Josefin Slab', serif;
+}
+
+header .logo h1 span{
+display: block;
+/* spanのブロック設定 */
+font-size: 16px;
+margin-bottom: 3px;
+/* フォントサイズと、下側の文字との余白適宜設定 */
+}
+
+
+header .slider li{
+    height: calc(100vh - 80px); 
+}
+header .slider li img{
+   object-fit: cover;
+    width: 100%;
+   height: 100%;
+    object-position: center;
+}
+
+
+
+
+
+/*-----------------------------------------
+    nav - pc- setting   
+-----------------------------------------*/
+
+.nav_pc{
+    position: sticky;
+    top: 0;
+    left: 0;
+    /* ブラウザのトップで、navが、positionのfixedに変換する → sticky */
+    background-color: rgba(204, 204, 204, 0.5);
+    /* 背景色設定 */
+
+}
+    
+.nav_pc .nav_inner{
+    display: flex;
+    justify-content: flex-end;
+    /* flexでの横並び・横配置を右寄せの設定 */
+}
+
+.nav_inner a{
+    display: block;
+    padding: 0 40px;
+    line-height: 80px;
+    /* aタグのブロックボックス、左右の余白、paddingで40px、上下の余白、line-heightで60px設定 */
+    color: #444;
+    font-weight: bold;
+    letter-spacing: .1em;
+    /* 文字装飾適宜設定 */    
+    font-family: 'Josefin Slab', serif;
+    transition: .3s;
+    /* hoverの時のtransition設定 */
+} 
+    
+.nav_pc .nav_inner a:hover{
+    background-color: #444;
+    color: #fff;   
+    /* 適宜設定 */
+}
+    
+.nav_sp{
+    display: none;
+    /* スマホのnavをPC表示の際には非表示 */
+}
+
+
+/*-----------------------------------------
+    main - setting   
+-----------------------------------------*/
+
+.main.container{
+    margin: 0 auto 70px;
+    /* PC表示の際、.mainと、.containerのマルチクラスの時だけ、marginのbottomに70pxを追加　*/        
+    padding: 0; 
+    /* PC表示の際、両サイドの余白は必要ないので、paddingを無効にする設定 */
+}
+
+
+
+/*-----------------------------------------
+    message - setting   
+-----------------------------------------*/
+
+.message{
+    padding: 60px 0;
+    /* navの高さを余白として入れないと、見出しとnavの高さがそろうので調整 */
+    margin-bottom: 100px;
+    /* 次のブロックの下側の余白設定 */ 
+    font-family: 'Josefin Slab', serif;
+}
+
+.message h2{
+    font-size: 40px;
+    /* フォントサイズ、40px前後で設定 */
+    padding: 20px 0;
+    /* 上下の余白、20px 30px設定 */
+    text-align: center;
+    /* 水平中央設定 */
+}
+
+.message p{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 0;
+    line-height: 1.7;
+    letter-spacing: 0.07em;
+    font-family: "Sawarabi Mincho"; 
+}
+
+.message p:last-of-type{
+    margin: 0 auto 30px;
+}
+
+.message ul{
+    display: flex;
+    justify-content: space-between;
+    /* 横並び、両端揃い設定 */
+}
+
+.message ul li{
+    width: 31%;
+    /* 幅、31%設定 */
+    padding: 7px;
+    border: 1px solid #aaa;
+
+}   
+
+
+/*-----------------------------------------
+    date - setting   
+-----------------------------------------*/
+
+.date{
+    padding: 60px 0;
+    /* navの高さを余白として入れないと、見出しとnavの高さがそろうので調整 */
+    margin-bottom: 40px;
+    /* 次のブロックの下側の余白設定 */
+
+}
+
+.date h2{
+    font-size: 40px;
+    /* フォントサイズ、40pxほど */
+    padding: 20px 0;
+    /* 上下の余白、20px設定 */
+    font-family: 'Josefin Slab', serif;
+    /* .messeageのh2と同じ設定 */
+    text-align: center;
+    
+}
+
+.date .date_item{
+    display: flex;
+    /* 横並び設定 */
+    padding: 30px 0;
+    /* 余白上限、30px設定 */
+}
+
+.date_item .photo{
+    width: 55%;
+    /* 幅、55%*/
+} 
+
+.date_item .text{
+    width: 45%;
+    /* 幅、45%*/
+}
+
+.date_item .text p{
+    font-size: 40px;
+    /* フォントサイズ、40pxほど */
+    padding: 50px 40px;
+    /* 上下左右の余白、50px、40pxほど */
+    background-color: rgba(255, 255, 255, 0.5);
+    /* 透明の背景色の設定 */
+    margin-top: 100px;
+    /* 外上側余白、100pxほど */
+    margin-left: -80px;
+    /* 左側の外側余白を、−80pxほどに設定し、左側のブロックに重ねる */
+    text-align: left;
+    /* SPで設定した、text-align: centerを、初期設定のleftに戻す */
+    line-height: 1.7;
+    /* 行間、1.7ほど */
+    font-family: 'Josefin Slab', serif;
+}
+
+.date_item .text p span{
+    font-size: 26px;
+    /* フォントサイズ、26pxほど */
+    padding: 0 10px;
+    /* 余白左右、10pxほど */
+}
+
+/*-----------------------------------------
+    access - setting   
+-----------------------------------------*/
+
+.access{
+  
+    padding: 60px 0;
+    /* navの高さを余白として入れないと、見出しとnavの高さがそろうので調整 */
+    margin-bottom: 40px;
+    /* 次のブロックの下側の余白設定 */
+
+}
+
+.access h2{
+    font-family: 'Josefin Slab', serif;
+    font-size: 40px;
+    /* フォントサイズ、40pxほど */
+    padding: 20px 0;
+    /* 上下の余白、20px設定 */
+    text-align: center;
+    /* .messeageのh2と同じ設定 */
+
+}
+
+.access iframe{
+    width: 100%;
+    height: 300px;
+}
+
+.access p{
+    padding: 30px 0;
+    line-height: 1.7;
+    text-align: center;
+    font-family: "Sawarabi Mincho"; 
+}
+
+
+  
+/*-----------------------------------------
+    form - setting   
+-----------------------------------------*/
+.form{
+    padding: 60px 0;
+    /* navの高さを余白として入れないと、見出しとnavの高さがそろうので調整 */
+    margin-bottom: 40px;
+    /* 次のブロックの下側の余白設定 */
+    font-family: "Sawarabi Mincho"; 
+    background-color: #fff;
+    
+}
+
+.form h2{
+    font-family: 'Josefin Slab', serif;
+    font-size: 40px;
+    padding: 20px 0 30px;
+    text-align: center;
+}
+
+.form form{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+form dl{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+
+form dl dt{
+    width: 20%;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    /* margin-bottom: 5px;
+    line-height: 1.6; */
+}
+
+form dl dd{
+    width: 80%;
+    margin-bottom: 25px;
+    /* margin-bottom: 20px; */
+} 
+
+form dd label{
+    padding: 0 30px 0 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+form dd input[type="radio"]{
+    margin-right: 7px;
+    width: 18px;
+    height: 18px;
+    vertical-align: -1px;
+}
+
+form dd input[type="text"],form dd input[type="email"]{
+    padding: 7px 9px;
+    width: 80%;
+    border: 1px solid #999;
+}
+form dd textarea{
+    padding: 7px 9px;
+    width: 100%;
+}
+
+form p{
+    text-align: right;
+}
+
+form p input[type="submit"]{
+    padding: 20px 30px;
+    background-color: #444;
+    color: #fff;
+}
+
+@media (max-width:768px){
+    
+
+}
+
+
+/*-----------------------------------------
+    footer - setting   
+-----------------------------------------*/
+
+footer{
+    background-color: #ddd;
+}
+
+footer p{
+    padding: 50px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+/*-----------------------------------------
+    #top - setting   
+-----------------------------------------*/
+
+
+ #top a{
+    display: none;
+    position: fixed;
+    right: 10%;
+    bottom: 10%;
+    width: 60px;
+    height: 60px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 60px;
+    background-color: #666;
+    color: #fff;
+    cursor: pointer;
+    /* 適宜設定 */
+}
+
+
+
+
+/*-----------------------------------------
+    thanks.html #bg and .content - setting   
+-----------------------------------------*/
+
+#bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100vh;
+    display: none;
+}
+
+.content{
+    max-width: 800px;
+    height: 500px;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    background-color: #fff;
+}
+
+.content h1{
+    margin: 150px 0 50px;
+    text-align: center;
+    font-size: 30px;
+    font-family: "Sawarabi Mincho"; 
+}
+
+.content p a{
+    display: block;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 3px;
+}
+
+
+/*-----------------------------------------
+    call to action setting
+------------------------------------------*/
+.bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(40, 40, 40, 0.5); 
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 2;
+
+}
+
+.bg .pr{
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 600px;
+    height: 250px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.bg h3{
+    font-size: 22px;
+}
+
+.bg .pr .cross{
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.bg .pr .text{
+    padding:20px 10px;
+    line-height: 1.7;
+}
+
+.bg .pr_btn{
+    display: block;
+    width: 80%;
+    margin: 10px auto 0;
+    padding: 15px 0;
+    text-align: center;
+    background-color: #666;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+
+}
+
+
+
+
+
+
+@media (max-width:768px){
+
+/*-----------------------------------------
+    html - responsive - smooth scroll setting   
+-----------------------------------------*/
+    /* SPの表示の際、通常のページ内リンクを初期設定 */
+    html {
+        scroll-behavior: auto;
+    }
+
+/*-----------------------------------------
+    header - responsive - setting   
+-----------------------------------------*/
+
+    header .logo {
+        position: static;
+        /* positionの初期値設定 */
+        width: auto;
+        /* 幅の初期値設定 */     
+    }
+
+    header .logo h1{
+        font-size: 20px;
+        /* フォントサイズ20px以上で適当 */
+        padding: 35px 0;
+        /* 上下のpadding適当 */
+
+    }
+
+    header .logo h1 span{
+        font-size: 16px;
+    } 
+
+    header .slider li{
+        height:40vh; 
+    }
+
+/*-----------------------------------------
+    burger - responsive - setting   
+-----------------------------------------*/
+
+    #burger{
+        position: fixed;
+        z-index: 1;
+        width: 50px;
+        height: 45px;
+        background-color: rgb(61, 63, 62);
+        right: 5%;
+        top: 30px;
+        transition: .3s;
+        cursor: pointer;
+    }
+
+    #burger span{
+        position: absolute;
+        width: 80%;
+        height: 3px;
+        background-color: #fff;
+        inset: 0;
+        margin: auto;
+        transition: .3s;
+    }
+
+    #burger span:nth-child(1){
+        background-color: #fff; 
+        top: -38%;
+
+    }
+
+    #burger span:nth-child(3){
+
+        background-color: #fff; 
+        top: 38%;
+
+    }
+
+    #burger.active{
+        background-color: rgb(186, 76, 76);
+    }
+
+    #burger.active span:nth-child(1){
+        top: 10%;
+    }
+
+    #burger.active span:nth-child(2){
+        opacity: 0;
+    }
+
+    #burger.active span:nth-child(3){
+        top: -10%;
+    }
+
+
+/*-----------------------------------------
+    nav - sp- setting   
+-----------------------------------------*/
+
+    .nav_sp{
+        display: block;
+        /* PC表示の際には非表示だった、nav_spを表示 */
+        position: fixed;
+        /* position、固定、幅・高さ、100%の設定 */
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 100%;
+        /* top 0、left 100%で枠外に隠す設定 */
+        background-color: rgb(61, 63, 62);
+        /* 背景色適宜 */
+        transition: .3s;
+        /* 隠していいる、.nav_spを戻して見せる時のtransition設定 */
+    }
+
+    .nav_sp .nav_inner{
+        padding-top: 100px;
+        /* padding-topで適宜見やすい位置に調整 */
+    }
+
+    .nav_sp .nav_inner a{
+        display: block;
+        /* aタグのブロックボックスへの変換 */
+        text-align: center;
+        line-height: 60px;
+        /* 水平・縦中央揃い 縦中央はline-height:60pxの設定 */
+        color: #fff;
+        font-weight: bold;
+        letter-spacing: .1em;
+        /* 文字装飾適宜設定 */
+        font-family: 'Josefin Slab', serif;
+    }
+
+    .nav_sp.drawer{
+        left:0;
+        /* バーガーボタンがクリックされたら、drawerクラスを追加するための設定 */
+    }
+
+    .nav_pc{
+        display: none;
+        /* PCのnavは、 min-width:768px以上で表示させるため、最初は非表示　*/
+    }
+
+/*-----------------------------------------
+    main - responsive - setting   
+-----------------------------------------*/
+
+    .main.container{
+        margin: 0 auto 50px;
+        /* スマホ表示の際、.mainと、.containerのマルチクラスの時だけ、marginのbottomに50pxを追加　*/
+        padding: 0 40px;
+        /* スマホ表示の際、両サイドに内側の余白を入れると見やすいので、両サイドにpadding設定 */
+
+
+    }
+
+
+/*-----------------------------------------
+    message - responsive - setting   
+-----------------------------------------*/
+    .message{
+        padding: 20px 0;
+        margin-bottom: 10px;
+    }
+
+    .message h2{
+        font-size: 25px;
+        /* フォントサイズ、25px前後で設定 */
+    }
+
+    .message p{
+        padding: 15px 10px;
+    }
+
+    .message ul{
+        display:block;
+        /* 横並び設定なし */
+    }
+
+    .message ul li{
+        width: auto;
+        /* 幅、初期設定 */
+        margin-bottom: 50px;
+         /* スマホの表示の際に、設定されていた下側余白は、PCの場合横配置になっているので、設定を無効 */        
+    }
+
+/*-----------------------------------------
+    date - responsive - setting   
+-----------------------------------------*/
+    .date{
+        padding: 20px 0;
+        margin-bottom: 10px;
+    }
+
+    .date h2{
+        font-size: 25px;
+
+    }
+        
+    .date .date_item{
+        display: block;
+        /* 横並び設定解除 */
+        padding: 30px 0;
+        /* 余白上限、30px設定 */
+    }
+    
+    .date_item .photo{
+        width: auto;
+        /* 幅、初期設定 */
+    } 
+    
+    .date_item .text{
+        width: auto;
+        /* 幅、初期設定 */
+    }
+
+    .date_item .text p{
+        font-size: 25px;
+        /* フォントサイズ25px前後 */
+        padding: 30px 40px;
+        /* 上下左右の余白、30px 40pxほど */
+        text-align:center;
+        /* 横中央 */
+        margin-top: 0;
+        margin-left: 0;
+        /* pc設定の初期化 */
+
+    }
+    
+
+    .date_item .text p span{
+        font-size: 18px;
+        /* フォントサイズ、10pxほど */
+        padding: 0 10px;
+        /* 左右の余白、10pxほど */
+    }
+
+/*-----------------------------------------
+    access - responsive - setting   
+-----------------------------------------*/
+
+    .access{
+        padding: 20px 0;
+        margin-bottom: 10px;
+    }
+
+    .access h2{
+        font-size: 25px;
+    }
+
+    .access iframe{
+        width: 100%;
+        height: 30vh;
+    }
+
+/*-----------------------------------------
+    rsvp - responsive - setting   
+-----------------------------------------*/
+
+
+form dl{
+    display: block;       
+}
+
+form dl dt{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form dl dd{
+    width: 100%
+    /* margin-bottom: 25px; */
+}
+
+form dd input[type="text"],form dd input[type="email"]{
+    /* padding: 7px 9px; */
+    width: 100%;
+    /* border: 1px solid #999; */
+}
+form dd textarea{
+    /* padding: 7px 9px; */
+    width: 100%;
+}
+
+form p{
+    text-align: center;
+}
+
+/* form p input[type="submit"]{
+    padding: 20px 30px;
+    background-color: #444;
+    color: #fff;
+} */
+
+ 
+/*-----------------------------------------
+    top - responsive - setting   
+-----------------------------------------*/    
+
+    #top a{
+        display: none !important;
+    }
+
+
+/*-----------------------------------------
+    thanks.html #bg and .content - responsive  setting   
+-----------------------------------------*/
+    .content h1{
+        font-size: 20px;
+
+    }
+
+
+/*-----------------------------------------
+    call to action setting
+------------------------------------------*/
+
+    .bg .pr{
+
+        width: 90%;
+        height: 48vh;
+    }
+
+    .bg .pr_btn{
+        width: 90%;
+    
+    }
+    
+
+}
