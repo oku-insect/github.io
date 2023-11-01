@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K & K Resort Renewal Open</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">  
+    <link rel="stylesheet" href="css/jquery.bxslider.css"> 
+</head>
+<body>
+    <p id="burger" class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </p>
+    <!-- burger button -->
+
+    <header id="wedding_top">
+        <div class="logo">
+            <h1><span>Renewal Open </span>K & K Resort</h1>
+        </div>
+        <ul class="slider">
+            <li><img src="img/hiro1.jpg" alt="結婚イメージ1"></li>
+            <li><img src="img/hiro2.jpg" alt="結婚イメージ2"></li>
+            <li><img src="img/hiro3.jpg" alt="結婚イメージ3"></li>
+        </ul>
+    </header>
+    <!-- header -->
+    <nav id="g_navSp" class="nav_sp">
+            <ul class="nav_inner container">
+                <li><a href="#wedding_top">Top</a></li>
+                <li><a href="#msgSec">Message</a></li>
+                <li><a href="#dateSec">Date</a></li>
+                <li><a href="#acsSec">Access</a></li>
+                <li><a href="#formSec">Rsvp</a></li>
+            </ul>
+    </nav><!-- スマホ用navのhtmlのタグ -->
+    <nav id="g_navPc" class="nav_pc">
+            <ul class="nav_inner container">
+                <li><a href="#msgSec">Message</a></li>
+                <li><a href="#dateSec">Date</a></li>
+                <li><a href="#acsSec">Access</a></li>
+                <li><a href="#formSec">Rsvp</a></li>
+            </ul>
+    </nav><!-- PC用navのhtmlのタグ -->
+    <!-- nav  -->
+    <main class="main container">
+        <section id="msgSec" class="message">
+            <h2>Message</h2>
+            <p>謹啓<br>薫風爽やかな季節を迎え、ますますご清祥のこととお慶び申し上げます<br>
+            平素は格別のお引き立てを賜り厚く御礼申し上げます</p>
+            <p>さて、かねてより建設中でありました、当社 K & K resort がお蔭様をもちまして5月6日（土）に、リニューアルオープンの運びとなりました<br>
+            これもひとえに皆様のご理解とご協力の賜物と深く感謝申し上げます</p>
+            <p>つきましては左記のとおり内覧会を開催させていただきたくご案内申し上げます。
+            ご多忙中とは存じますが、皆様方のご来館をスタッフ一同心よりお待ちしております。<br>
+            敬白</p>
+
+            <ul>
+                <li><img src="img/party2.jpg" alt="party_photo"></li>
+                <li><img src="img/party3.jpg" alt="party_photo"></li>
+                <li><img src="img/party4.jpg" alt="party_photo"></li>
+            </ul>
+        </section>
+        <!-- section msgSec -->
+
+
+
+        <section id="dateSec" class="date">
+            <h2>Save the Date</h2>
+            <div class="date_item">
+                <p class="photo"><video src="img/cooking.mp4" autoplay muted controls></p>
+                <div class="text">
+                    <p>2022.12.15 <span>( sat )</span><br>
+                    <span>start</span>13:00 - </p>
+                    
+                </div>
+            </div>
+            
+        </section>
+        <!-- section dateSec -->
+
+        <section id="acsSec" class="access">
+            <h2>Access</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3238.9409446677796!2d139.71232161526004!3d35.727670880183496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z5Y2X5rGg6KKLIOWFrOWckiDjgqvjg5Xjgqc!5e0!3m2!1sja!2sjp!4v1668947792336!5m2!1sja!2sjp" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p>東京都豊島区南池袋 000-0000 <br> 03-××××-××××</p>
+
+        </section>
+        <!-- section acseSec -->
+        <section id="formSec" class="form">
+            <div class="container">
+                <h2>Rsvp</h2>
+                <form action="" method="">
+                    <dl>
+                        <dt>出席の有無</dt>
+                        <dd>
+                            <label><input type="radio" name="attend" value="ご出席" checked="checked">ご出席</label>
+                            <label><input type="radio" name="attend" value="ご欠席">ご欠席</label>
+                        </dd>
+                        <dt>お名前</dt>
+                        <dd><input type="text" name="user_name" placeholder="山田 太郎" required></dd>
+                        <dt>メールアドレス</dt>
+                        <dd><input type="email" name="user_email" placeholder="tarou@co.com" required></dd>
+                        <dt>メッセージ</dt>
+                        <dd><textarea name="message" cols="30" rows="10" placeholder="メッセージ"></textarea></dd>
+                    </dl>
+                    <p><input type="submit" value="送信"></p>
+                </form><!-- form -->
+            </div><!-- container -->
+        </section><!-- section formSec -->
+
+
+    </main>
+    <!-- main -->
+    <footer>
+        <p>○○○○ copy right</p>
+    </footer>
+    <!-- footer -->
+    <p id="top">
+        <a href="#wedding_top">TOP</a>
+    </p>
+
+    <div class="bg" id="bg_cover">
+        <div class="pr">
+            <h3>リニューアル記念プレゼント</h3>
+            <p class="cross" id="close_btn"><img src="img/cross.png" alt="cross"></p>
+            <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod voluptatem, neque ab quaerat 
+                soluta corrupti
+            </p>
+            <a href="http://www.google.com" class="pr_btn" target="blunk">お申し込みはこちらから</a>
+        </div>
+    </div>
+    <!-- bg -->
+ 
+    
+    <!-- to Top -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="jquery.bxslider.min.js"></script>
+    <script>
+
+    $(function(){
+        
+        // -----------------------
+        //  bxSlider
+        // -----------------------
+
+        $('header .slider').bxSlider({
+            auto:true,
+            speed:4000,
+            pause:5000,
+            pager:false,
+            controls:false,
+            mode:'fade',
+        });
+
+
+
+        // -----------------------
+        //  topに戻る
+        // -----------------------
+        let toTop=$('#top a');
+        // $('#top')の場所を変数、toTopに代入
+        $(window).on('scroll',function(){
+        //キッカケ（イベント）は、$(window)のスクロールされた時 
+        let scl=$(this).scrollTop();
+        //スクロールバーのトップからの距離を取得 scrollTop()。変数、letのsclに格納 
+            if(scl>500){
+                toTop.fadeIn();       
+            } else{
+                toTop.fadeOut();
+            }
+            // if else sclが500より大きくなっtら、toTopをfadeIn、それ以外なら、fadeOut() 
+        });
+        // -----------------------
+        //  burger メニュー関連 
+        // -----------------------
+        let burger= $('#burger');
+        let navSp= $('#g_navSp');
+        let navSp_a= $('#g_navSp a');
+        // 各HTMLの場所を変数、burger、navSp、navSp_aに代入
+
+        burger.on('click',function(){
+            $(this).toggleClass('active');
+            navSp.toggleClass('drawer');
+            
+        });
+
+        navSp_a.on('click',function(){
+            burger.toggleClass('active');
+            navSp.toggleClass('drawer');
+            
+        });
+
+        // ----------------------------------------
+        // Call To Action などに使われる、PR設定方法 
+        // ----------------------------------------
+        let bgc=$('#bg_cover');
+        let close=$('#close_btn')
+
+
+            function call() {
+                    bgc.fadeIn();
+            }
+
+        // $('#bg_cover')をfadeInさせる関数名、callの設定
+
+        setTimeout(call, 5000);
+            // 関数名、callを5秒後に開始する
+
+            close.on('click', function () {
+                bgc.fadeOut();
+            });
+        // $('#close_btn')をクリックしたら$('#bg_cover')をフェードアウトさせる
+        });
+  
+
+    </script>
+</body>
+</html>
